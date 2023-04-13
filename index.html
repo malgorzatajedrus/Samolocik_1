@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Samolocik</title>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+			crossorigin="anonymous"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+		/>
+		<link
+			href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+
+	<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="82">
+		<nav
+			id="navbar"
+			class="navbar navbar-expand-lg position-fixed top-0 w-100 py-3"
+		>
+			<div class="container">
+				<a class="navbar-brand" href="#"
+					><i class="fa-solid fa-plane-departure"></i> samo<span
+						class="blue-text"
+						>locik</span
+					></a
+				>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<i class="fas fa-bars"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav ms-auto text-center">
+						<a class="nav-link active" href="#home">Home</a>
+						<a class="nav-link" href="#reservation">zarezerwuj</a>
+						<a class="nav-link" href="#directions">kierunki</a>
+						<a class="nav-link" href="#weather">pogoda</a>
+						<button class="nav-link btnLogin">zaloguj się</button>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<header id="home">
+			<div class="hero-img">
+				<div class="hero-shadow"></div>
+				<div class="hero-text">
+					<h1 data-aos="fade-up" data-aos-delay="200">
+						przygoda zaczyna się tutaj
+					</h1>
+					<p data-aos="fade-up" data-aos-delay="400">
+						zarezerwuj swój lot już dziś!
+					</p>
+					<a
+						data-aos="fade-up"
+						data-aos-delay="600"
+						href="#reservation"
+						type="button"
+						class="btn btn-outline-light"
+						>loty</a
+					>
+				</div>
+				<a href="#reservation"
+					><i class="fas fa-chevron-down bounce-top"></i
+				></a>
+			</div>
+		</header>
+		<!-- logowanie/rejestracja -->
+		<div class="wrapper">
+			<span class="icon-close"><i class="fa-solid fa-xmark"></i> </span>
+			<div class="form-box login">
+				<h2>Logowanie</h2>
+				<form action="#">
+					<div class="input-box">
+						<span class="icon"
+							><i class="fa-solid fa-envelope"></i
+						></span>
+						<input type="email" required />
+						<label>E-mail</label>
+					</div>
+					<div class="input-box">
+						<span class="icon"
+							><i class="fa-solid fa-lock"></i
+						></span>
+						<input type="password" required />
+						<label>Hasło</label>
+					</div>
+					<div class="remember-forgot">
+						<label
+							><input type="checkbox" /> Zapamiętaj hasło</label
+						>
+						<a href="#">Nie pamiętam hasła</a>
+					</div>
+					<button type="submit" class="btn">Zaloguj</button>
+					<div class="login-register">
+						<p>
+							Nie masz konta?<a href="#" class="register-link">
+								Zarejestruj się</a
+							>
+						</p>
+					</div>
+				</form>
+			</div>
+			<div class="form-box register">
+				<h2>Rejestracja</h2>
+				<form action="#">
+					<div class="input-box">
+						<span class="icon"
+							><i class="fa-solid fa-user"></i
+						></span>
+						<input type="text" required />
+						<label>Nazwa użytkownika</label>
+					</div>
+					<div class="input-box">
+						<span class="icon"
+							><i class="fa-solid fa-envelope"></i
+						></span>
+						<input type="email" required />
+						<label>E-mail</label>
+					</div>
+					<div class="input-box">
+						<span class="icon"
+							><i class="fa-solid fa-lock"></i
+						></span>
+						<input type="password" required />
+						<label>Hasło</label>
+					</div>
+					<div class="remember-forgot">
+						<label
+							><input type="checkbox" /> Akcpetuję
+							regulamin</label
+						>
+					</div>
+					<button type="submit" class="btn">Zarejestruj</button>
+					<div class="login-register">
+						<p>
+							Masz już konto?<a href="#" class="login-link">
+								Zaloguj się</a
+							>
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- rezerwacja biletow -->
+		<main>
+			<section id="reservation" class="reservation bg-light py-5">
+				<h2>zarezerwuj lot</h2>
+				<div class="underline"></div>
+				<div class="container">
+					<form action="plane-seats.html">
+						<div class="row justify-content-center">
+							<div class="select-flight">
+								<i class="fa-solid fa-plane-departure"></i>
+								<select
+									id="flight-from"
+									class="form-select"
+									aria-label="Default select example"
+									required
+								>
+									<option value="">Lotnisko wylotu</option>
+									<option value="1">Katowice</option>
+								</select>
+							</div>
+							<div class="select-flight">
+								<i class="fa-solid fa-plane-arrival"></i>
+								<select
+									id="flight-to"
+									class="form-select"
+									aria-label="Default select example"
+									required
+									onchange="arrivalCity()"
+								>
+									<option value="">Lotnisko przylotu</option>
+									<option value="Hawana">Hawana</option>
+									<option value="Londyn">Londyn</option>
+									<option value="Nowy Jork">Nowy Jork</option>
+									<option value="Tokio">Tokio</option>
+								</select>
+							</div>
+							<div class="select-flight">
+								<i class="fa-solid fa-calendar-days"></i>
+								<input
+									class="input-reservation"
+									type="date"
+									id="flight-date"
+									required
+									onchange="flightDate()"
+								/>
+							</div>
+							<div class="select-flight">
+								<i class="fa-solid fa-user"></i>
+								<select
+									id="passengers"
+									class="form-select"
+									aria-label="Default select example"
+									required
+									onchange="selectSeats()"
+								>
+									<option value="">Liczba pasażerów</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+								</select>
+							</div>
+							<div class="select-flight col-12">
+								<a
+									href="plane-seats.html"
+									class="text-decoration-none"
+								>
+									<button
+										id="book-flight"
+										class="book-flight select-flight col-12"
+										type="submit"
+									>
+										Szukaj
+									</button>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</section>
+			<!-- sekcja kierunki lotów -->
+			<section id="directions" class="directions py-5">
+				<h2>kierunki</h2>
+				<div class="underline"></div>
+				<div class="container">
+					<div class="card-group directions-carousel">
+						<div class="card mx-3">
+							<img
+								src="img/nyc_small.jpg"
+								class="card-img-top"
+								alt="Nowy Jork"
+							/>
+							<div class="card-body d-flex justify-content-center align-items-center">
+								<h5 class="card-title">nowy jork</h5>
+							</div>
+						</div>
+						<div class="card mx-3">
+							<img
+								src="img/japan_small.jpg"
+								class="card-img-top"
+								alt="Tokio"
+							/>
+							<div class="card-body d-flex justify-content-center align-items-center">
+								<h5 class="card-title">tokio</h5>
+							</div>
+						</div>
+						<div class="card mx-3">
+							<img
+								src="img/havana_small.jpg"
+								class="card-img-top"
+								alt="Hawana"
+							/>
+							<div class="card-body d-flex justify-content-center align-items-center">
+								<h5 class="card-title">Hawana</h5>
+							</div>
+						</div>
+						<div class="card mx-3">
+							<img
+								src="img/londyn_small.jpg"
+								class="card-img-top"
+								alt="Londyn"
+							/>
+							<div class="card-body d-flex justify-content-center align-items-center">
+								<h5 class="card-title">londyn</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="directions-shadow"></div>
+			</section>
+		</main>
+
+		<footer class="bg-dark text-light py-4 text-center">
+			<p class="mb-0">&copy; 2023 | SamoLocik</p>
+		</footer>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+			crossorigin="anonymous"
+		></script>
+		<script
+			type="text/javascript"
+			src="//code.jquery.com/jquery-1.11.0.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+		></script>
+
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init({
+				startEvent: "DOMContentLoaded",
+				offset: 200,
+				once: true,
+			});
+		</script>
+		<script
+			src="https://kit.fontawesome.com/8efffedf4e.js"
+			crossorigin="anonymous"
+		></script>
+		<script
+			type="text/javascript"
+			src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+		></script>
+		<script src="js/slicksettings.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>
